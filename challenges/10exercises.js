@@ -35,39 +35,39 @@ reverse = (string) => {
 
 // Represent a small bilingual lexicon as a Javascript object in the following fashion
 //and use it to translate your Christmas cards from English into Swedish.
-const translation = {
-  "merry": "god",
-  "christmas": "jul",
-  "and": "och",
-  "happy": "gott",
-  "new": "nytt",
-  "year": "år"
-}
+// const translation = {
+//   "merry": "god",
+//   "christmas": "jul",
+//   "and": "och",
+//   "happy": "gott",
+//   "new": "nytt",
+//   "year": "år"
+// }
 
-function match(word) {
-  for (let en in translation) {
-    if (RegExp(en).test(word)) {
-      return translation[en]
-    } else {
-      return word
-    }
-  }
-}
+// function match(word) {
+//   for (let en in translation) {
+//     if (RegExp(en).test(word)) {
+//       return translation[en]
+//     } else {
+//       return word
+//     }
+//   }
+// }
 
-seasonsGreetings = (string) => {
-  let swedish = ''
-  for (let word of string) {
-    swedish += match(string[word])
-  }
-  return swedish
-}
+// seasonsGreetings = (string) => {
+//   let swedish = ''
+//   for (let word of string) {
+//     swedish += match(string[word])
+//   }
+//   return swedish
+// }
 
 //Write a function findLongestWord() that takes an array of words and returns the length of the longest one.
-filterLongestWord = (arr) => {
-  arr.reduce((a, b) => {
-    b.length - a.length
-  })
-}
+// filterLongestWord = (arr) => {
+//   arr.reduce((a, b) => {
+//     b.length - a.length
+//   })
+// }
 
 //Write a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i.
 filterLongWords = (arr, num) => {
@@ -95,11 +95,7 @@ charFreq = (string) => {
 
 charFreq = (string) => {
   let count = string.split('').reduce((characters, char) => {
-    if (char in characters) {
-      characters[char]++
-    } else {
-      characters[char] = 1
-    }
+    char in characters ? characters[char]++ : characters[char] = 1
     return characters
   }, {})
   return count
